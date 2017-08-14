@@ -16,11 +16,18 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from common import views as common_views
+from mydjango.index import index
+from projectdemo.views import indexpage
+from userdemo.views import login
+
 
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
-    url(r'^index/', common_views.index),
-    url(r'^index2/', common_views.index2),
-    url(r'^add/$', common_views.add, name='add'),
-    url(r'^add/(\d+)/(\d+)/$', common_views.add2, name='add2'),
+    url(r'^$', index),
+    url(r'^user/login',login),
+    url(r'^user/index',indexpage)
+    # url(r'^index/', common_views.index),
+    # url(r'^index2/', common_views.index2),
+    # url(r'^add/$', common_views.add, name='add'),
+    # url(r'^add/(\d+)/(\d+)/$', common_views.add2, name='add2'),
 ]
