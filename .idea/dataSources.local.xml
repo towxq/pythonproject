@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - appdemo@rm-uf6mj91y7ct3pr7pho.mysql.rds.aliyuncs.com" uuid="8032dfaa-91d7-4620-a9f6-2e3cf3d8285c">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>appdemo.*</schema-pattern>
+      <default-schemas>appdemo.*</default-schemas>
+    </data-source>
+  </component>
+</project>

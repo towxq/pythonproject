@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script src="/static/js/jquery-1.11.2.min.js"></script>
+<body>
+{#hello world123!!#}
+{##}
+{#{{ string }}#}
+{##}
+{#{% for s in string %}#}
+{#{{ s }}#}
+{#{% endfor %}#}
+
+{#{% for key, value in string.items %}#}
+{#    {{ key }}:{{ value }}#}
+{#{% endfor %}#}
+
+{#aaa: {{ string.a }}#}
+{##}
+{#bbb:#}
+{#{% for s in string.b %}#}
+{#    {{ s }}#}
+{#{% endfor %}#}
+{#ccc:#}
+{#{{ string.c.腾讯 }}#}
+<form action="/index/" method="POST">
+<h1>登录</h1>
+<input id="username" name="username" type="text" autocomplete="off" placeholder="账号" />
+<input id="password" name="password" type="password" autocomplete="off" placeholder="密码"/>
+<input id="submitBtn" type="submit" value="登录" />
+</form>
+<h2>列表</h2>
+<table border="1">
+    <thead>
+        <th>用户名</th>
+        <th>密码</th>
+    </thead>
+    <tbody>
+    <td>
+            <tr>{{ data.username}}</tr>
+            <tr>{{ data.password}}</tr>
+    </td>
+    </tbody>
+</table>
+</body>
+</html>
