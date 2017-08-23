@@ -3,11 +3,13 @@ from __future__ import unicode_literals
 import hashlib
 import json
 import uuid
-from django.http import HttpResponse
+from django.core.cache import cache
+from django.http import HttpResponse, HttpResponseRedirect
 
 from django.shortcuts import render
 
 # Create your views here.
+
 from userdemo.models import User
 from userdemo.util import FeedbackMessage
 
@@ -24,7 +26,8 @@ def login(request):
         if user.password != md5password:
             return_json = FeedbackMessage(True,"77779", "密码错误",)
         else:
-             return_json = FeedbackMessage(True,"11111", "登陆成功",)
+            cache.set(request.COOKIES.get('wxq_django_sessionid',''),json.dumps(user.username))
+            return_json = FeedbackMessage(True,"11111", "登陆成功",)
     except Exception,e:
         print str(e.args)
         return_json = FeedbackMessage(True,"77779", "用户名不存在",)
@@ -74,4 +77,15 @@ def deluser(request):
     except Exception,e:
         print str(e.args)
         return_json =  return_json = FeedbackMessage(True,"77779", "删除失败",)
+    return HttpResponse(json.dumps(return_json.dict()), content_type='application/json')
+
+def updateuser(request):
+    password = request.POST.get('password')
+    username = request.POST.get('username')
+    try:
+        User.objects.filter(username=username).update(password=password)
+        return_json =  return_json = FeedbackMessage(True,"11111", "修改成功",)
+    except Exception,e:
+        print e.args
+        return_json =  return_json = FeedbackMessage(True,"77779", "修改失败",)
     return HttpResponse(json.dumps(return_json.dict()), content_type='application/json')

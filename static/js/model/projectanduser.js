@@ -97,7 +97,7 @@ $(function(){
         var username = $(this).attr("username");
         $.ajax({
             type: 'POST',
-            url: '/user/selectuserbyusername',
+            url: '/user/updateuser',
             data: {"username":username},
             success: function (results) {
                 $('#userRoleupdate').remove();
