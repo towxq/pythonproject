@@ -6,8 +6,6 @@ from django.db import models
 # Create your models here.
 
 class User(models.Model):
-    class Meta:
-        db_table = 'user'
 
     id = models.CharField(max_length=50,primary_key='True')
     username = models.CharField(max_length=50)
@@ -15,3 +13,11 @@ class User(models.Model):
     telnumber = models.CharField(max_length=50)
     createtime = models.DateTimeField(auto_now_add=True)
     userrole = models.CharField(max_length=2)
+
+    def __unicode__(self):
+        return self.username
+
+    class Meta:
+        db_table = 'user'
+        verbose_name_plural = verbose_name = '用户'
+        ordering = ['createtime']

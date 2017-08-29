@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'common',
     'userdemo',
     'projectdemo',
+    'blog',
+    'DjangoUeditor',
 ]
 
 MIDDLEWARE = [
@@ -122,6 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'UTC'
 

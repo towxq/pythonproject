@@ -12,8 +12,9 @@ class SimpleMiddleware(MiddlewareMixin):
     def process_request(self, request):
         sessionid = request.COOKIES.get('wxq_django_sessionid','')
         if sessionid != '' and request.path != "user/login":
-            if cache.get(sessionid) is None:
-                return HttpResponseRedirect('/')
+            pass
+            # if cache.get(sessionid) is None:
+            #     return HttpResponseRedirect('/')
         return None
 
     def process_response(self, request, response):
