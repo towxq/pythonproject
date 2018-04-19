@@ -1,0 +1,22 @@
+1,新建一个django project
+django-admin.py startproject project-name
+
+2,新建app
+python manage.py startapp app-name
+
+3,运行
+python manage.py runserver
+
+mydgango
+----templates文件夹放 HTML模板
+----static文件夹放静态文件 js,css,images
+----manage.py  django管理主程序
+
+----mydjango
+--------settings.py  主配置文件
+--------urls.py   url路由文件
+--------wsgi.py   网络通信接口
+
+----userdemo
+--------models.py 用Python的类来描述数据表
+--------views.py  页面的逻辑

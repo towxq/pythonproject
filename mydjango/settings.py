@@ -36,11 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mydjango',
-    'common',
     'userdemo',
-    'projectdemo',
-    'blog',
-    'DjangoUeditor',
+    'projectdemo'
 ]
 
 MIDDLEWARE = [
@@ -81,25 +78,29 @@ WSGI_APPLICATION = 'mydjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'appdemo',
+        'NAME': 'django',
         'USER': 'root',
-        'PASSWORD': 'Wxq123456',
-        'HOST': 'rm-uf6mj91y7ct3pr7pho.mysql.rds.aliyuncs.com',
-        'PORT': '3306'
+        'PASSWORD': '123456',
+        'HOST': '192.168.78.128',
+        'PORT': '3306',
+        'OPTIONS': {
+             'autocommit': True,
+             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+         },
     }
 }
 
 
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://47.93.4.32:6379/1",
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            "PASSWORD": "Wxq123456"
-        }
-    }
-}
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django_redis.cache.RedisCache",
+#         "LOCATION": "redis://192.168.78.128/1",
+#         "OPTIONS": {
+#             "CLIENT_CLASS": "django_redis.client.DefaultClient",
+#             "PASSWORD": "123456"
+#         }
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

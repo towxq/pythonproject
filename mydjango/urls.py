@@ -20,7 +20,6 @@ from mydjango.index import index
 from projectdemo.views import indexpage, projectlist, addproject, delproject
 from userdemo.views import login, userlist, adduser, deluser
 
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index),
