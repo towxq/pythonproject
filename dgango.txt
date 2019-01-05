@@ -20,3 +20,9 @@ mydgango
 ----userdemo
 --------models.py 用Python的类来描述数据表
 --------views.py  页面的逻辑
+
+
+# 1. 创建更改的文件
+python manage.py makemigrations
+# 2. 将生成的py文件应用到数据库
+python manage.py migrate

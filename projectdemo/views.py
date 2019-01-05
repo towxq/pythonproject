@@ -42,8 +42,7 @@ def addproject(request):
     try:
         Project.objects.create(id=id,projectname=projectname,projecturl=projecturl,projectdesc=projectdesc)
         return_json = FeedbackMessage(True,"11111", "添加成功",)
-    except Exception,e:
-        print str(e.args)
+    except Exception:
         return_json = FeedbackMessage(True,"77779", "添加失败",)
     return HttpResponse(json.dumps(return_json.dict()), content_type='application/json')
 
@@ -52,7 +51,6 @@ def delproject(request):
     try:
         Project.objects.get(id=projectid).delete()
         return_json =  return_json = FeedbackMessage(True,"11111", "删除成功",)
-    except Exception,e:
-        print str(e.args)
+    except Exception:
         return_json =  return_json = FeedbackMessage(True,"77779", "删除失败",)
     return HttpResponse(json.dumps(return_json.dict()), content_type='application/json')

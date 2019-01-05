@@ -19,5 +19,5 @@ class User(models.Model):
 
     class Meta:
         db_table = 'user'
-        verbose_name_plural = verbose_name = '用户'
+        verbose_name_plural = verbose_name ='用户'
         ordering = ['createtime']

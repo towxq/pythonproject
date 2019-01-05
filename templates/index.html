@@ -28,6 +28,12 @@
             <div class="glyphicon glyphicon-lock">
                 <input id="password" name="password" type="password" autocomplete="off" placeholder="密码" class="input-text" />
             </div>
+            <div class="glyphicon">
+                    <span class="p_code"></span>
+                    <input class="ipt" id="txtVCode" type="text" placeholder="请输入验证码" value="" style="width:100px;ime-mode:disabled;"/>
+                    <img id="imgVCode" src="/getsmscode/" style="width: 100px; height: 35px;" />
+                    <a href="#" id="btnChange">看不清?换一张</a>
+           </div>
         </form>
         <div class="button">
             <input id="submitBtn" type="button" value="登录" class="btn btn-primary" />

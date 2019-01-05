@@ -19,10 +19,12 @@ from common import views as common_views
 from mydjango.index import index
 from projectdemo.views import indexpage, projectlist, addproject, delproject
 from userdemo.views import login, userlist, adduser, deluser
+from userdemo.views import check_code
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index),
+    url(r'^getsmscode/',check_code),
     url(r'^user/login',login),
     url(r'^user/index',indexpage),
     url(r'^user/addprojrct',addproject),
